@@ -44,11 +44,11 @@ public class UserServiceImpl implements UserService {
         return userDto;
     }
 
+
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         UserEntity userEntity = userRepository.findByEmail(s);
-
-        if(userEntity!=null) throw new UsernameNotFoundException(s);
+        if (userEntity == null) throw new UsernameNotFoundException(s);
 
         return new User(userEntity.getEmail(), userEntity.getEncryptedPassword(), new ArrayList<>());
     }

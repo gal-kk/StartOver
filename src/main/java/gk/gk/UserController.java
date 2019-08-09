@@ -15,12 +15,12 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("user")
+    @GetMapping("users")
     public String Getre(){
         return "Get Request Checked.";
     }
 
-    @PostMapping("user")
+    @PostMapping("users")
     public UserDetail Postre(@RequestBody User userIn){
         UserDetail userDetail = new UserDetail();
         UserDto userDto = new UserDto();
