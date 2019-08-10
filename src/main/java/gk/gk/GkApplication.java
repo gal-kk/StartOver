@@ -18,4 +18,9 @@ public class GkApplication {
         return new BCryptPasswordEncoder();
     }
 
+
+    @Bean
+    public SpringApplicationContext applicationContext(){
+        return new SpringApplicationContext();
+    }
 }
